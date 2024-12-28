@@ -129,7 +129,7 @@ impl Shop {
             .clone()
             .into_iter()
             // Corrected logic, removed unnecessary .get_key_value()
-            .filter(|(name, card)| customer.preferences.contains(&card._rarity))
+            .filter(|(_, card)| customer.preferences.contains(&card._rarity))
             .collect();
 
         let card_to_buy = if !preferred_cards.is_empty() {
